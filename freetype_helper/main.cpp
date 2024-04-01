@@ -7,6 +7,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <vector>
 #include "freetype_helper/freetype_helper.h"
 
 using std::cout;
