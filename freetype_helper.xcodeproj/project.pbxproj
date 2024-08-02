@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D9314C7D2C5CC0F000D7F252 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9314C7C2C5CC0F000D7F252 /* main.cpp */; };
+		D95B72DE2C5CC1E0003A338D /* freetype_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = D95B72DD2C5CC1E0003A338D /* freetype_helper.c */; };
+		D9F395B62C5CC15700A94F77 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F395B52C5CC15700A94F77 /* libfreetype.6.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,9 @@
 /* Begin PBXFileReference section */
 		D9314C792C5CC0F000D7F252 /* freetype_helper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = freetype_helper; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9314C7C2C5CC0F000D7F252 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D95B72DC2C5CC1E0003A338D /* freetype_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = freetype_helper.h; sourceTree = "<group>"; };
+		D95B72DD2C5CC1E0003A338D /* freetype_helper.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = freetype_helper.c; sourceTree = "<group>"; };
+		D9F395B52C5CC15700A94F77 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = /opt/homebrew/Cellar/freetype/2.13.2/lib/libfreetype.6.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F395B62C5CC15700A94F77 /* libfreetype.6.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +49,7 @@
 			children = (
 				D9314C7B2C5CC0F000D7F252 /* freetype_helper */,
 				D9314C7A2C5CC0F000D7F252 /* Products */,
+				D9F395B42C5CC15700A94F77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +64,27 @@
 		D9314C7B2C5CC0F000D7F252 /* freetype_helper */ = {
 			isa = PBXGroup;
 			children = (
+				D95B72DB2C5CC1CC003A338D /* freetype_helper */,
 				D9314C7C2C5CC0F000D7F252 /* main.cpp */,
 			);
 			path = freetype_helper;
+			sourceTree = "<group>";
+		};
+		D95B72DB2C5CC1CC003A338D /* freetype_helper */ = {
+			isa = PBXGroup;
+			children = (
+				D95B72DC2C5CC1E0003A338D /* freetype_helper.h */,
+				D95B72DD2C5CC1E0003A338D /* freetype_helper.c */,
+			);
+			path = freetype_helper;
+			sourceTree = "<group>";
+		};
+		D9F395B42C5CC15700A94F77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9F395B52C5CC15700A94F77 /* libfreetype.6.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9314C7D2C5CC0F000D7F252 /* main.cpp in Sources */,
+				D95B72DE2C5CC1E0003A338D /* freetype_helper.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +271,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/freetype/2.13.2/include/freetype2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/freetype/2.13.2/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +284,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/freetype/2.13.2/include/freetype2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/freetype/2.13.2/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
